@@ -3,9 +3,23 @@ title: "Harp 325 Final"
 output: html_document
 date: "2023-05-01"
 ---
+```{r}
+install.packages('RColorBrewer')
+```
 
 ```{r}
-The_Climate_Change_Twitter_Dataset
+library(RColorBrewer)
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(stringr)
+library(tidyr)
+library(sf)
+```
+
+
+```{r}
+The_Climate_Change_Twitter_Dataset <- read_csv("C:\\Users\\kevin\\Documents\\GitHub\\Binghamton\\Harp 325\\Harp 325 Final\\The Climate Change Twitter Dataset.csv")
 ```
 ```{r}
 TCCTD2009 <- The_Climate_Change_Twitter_Dataset %>% filter(created_at > "2009-10-01 16:06:42") %>% na.omit(The_Climate_Change_Twitter_Dataset) %>% select(-c(id))
